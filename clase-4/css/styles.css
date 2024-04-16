@@ -1,0 +1,148 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'JosefinSans';
+    color: #ffffff;
+}
+/* fuentes */
+@font-face {
+    font-family: 'JosefinSans';
+    src: url('../assets/JosefinSans-Regular.ttf');
+    font-size: 18px;
+}
+a{
+    text-decoration: none;
+}
+main{
+    padding: 30px 90px;
+    background-image: url(../images/back-celeste-gris.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+@media (max-width: 750px){
+    main{
+        padding: 30px;
+    }
+}
+/* Home */
+.home{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.home-titulo{
+    font-size: 90px;
+    width: 600px;
+    line-height: 100px;
+    color:#244aa9
+}
+@media (max-width: 700px){
+    .home-titulo{
+        width:auto;
+    }
+}
+.home-subtitulo{
+    font-size: 15px;
+    padding: 70px;
+}
+.home-copete{
+    font-size: 25px;
+    padding: 50px 0px 60px;
+
+}
+.home a{
+    padding: 9px;
+    background-color: #4768bc;
+    border-radius: 25px;
+    color: aliceblue;
+}
+
+/* About */
+.about{
+    padding-top: 80px;
+}
+.about-subtitulo{
+    font-size: 60px;
+    font-weight: bolder;
+    color: #244aa9;
+}
+.about-copete{
+    width: 330px;
+    padding: 30px 0px 50px
+}
+.about-contenedor{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-between;
+}
+.about-carta{
+    background-color: #4768bc8d;
+    border-radius: 20px;
+    width: 330px;
+    height: 130px;
+    padding: 20px;
+}
+.about-carta h3{
+    font-size: 25px;
+    color: aliceblue;
+    padding-bottom: 10px;
+}
+.about-carta p{
+    color: aliceblue;
+}
+
+/* Información */
+.información{
+    padding-top: 80px;
+}
+.información-subtitulo{
+    font-size: 60px;
+    font-weight: bolder;
+    padding-bottom: 50px;
+    color: #244aa9;
+}
+.información-contenedor{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: center;
+    justify-content:space-evenly
+}
+.información-carta{
+    background-color: #4768bc8d;
+    border-radius: 20px;
+    width: 250px;
+    height: 310px;
+    padding: 25px;
+    display: flex;
+    text-align:left;
+    flex-direction: column;
+    justify-content:end
+}
+.información-carta h3{
+    font-size: 25px;
+    color: aliceblue;
+    padding-bottom: 10px;
+}
+.información-carta p{
+    color: aliceblue;
+}
+
+/* Call */
+.call{
+    text-align: center;
+    padding-top: 70px;
+}
+.call p{
+    font-size: 30px;
+    padding-bottom: 40px;
+}
+.call a{
+    padding: 9px;
+    background-color: #4768bc;
+    border-radius: 25px;
+    color: aliceblue;
+}
