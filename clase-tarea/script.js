@@ -62,9 +62,78 @@
 // Ademas si el mensaje cuenta con ",", "@", "-" debera decir, "el mensaje es complejo", sino decir
 // "el mensaje no es complejo"
 
+// function descifrador (datoCodificado){
+//     let decodificado = datoCodificado.replaceAll('%20', ' ')
+//     return decodificado
+// }
+
+// function contadorCaracteres (datoDecodificado){
+//     if(datoDecodificado.length <8){
+//         return 'el mensaje es corto'
+//     }
+//     else if(datoDecodificado.length >=9 && datoDecodificado.length <=18){
+//         return 'el mensaje es mediano'
+//     }
+//     else if(datoDecodificado.length >18){
+//         return 'el mensaje es largo'
+//     }
+// }
+
+// function clasificadorDato (datoDecodificado){
+//     if(datoDecodificado.includes(",", "@", "-")){
+//         return 'el mesaje es complejo'
+//     }
+//     else{
+//         return 'el mensaje no es complejo'
+//     }
+// }
+
+// let codigo1 = "hola%20como%20estas,%20todo%bien?"
+// let codigoDescifrado1 = descifrador(codigo1)
+// console.log(codigoDescifrado1)
+// let codigoContador1 = contadorCaracteres (codigoDescifrado1)
+// console.log(codigoContador1)
+// let codigoClasificador1 = clasificadorDato (codigoDescifrado1)
+// console.log(codigoClasificador1)
+
+// let codigo2 = "no%20me%20siento%20bien"
+// let codigoDescifrado2 = descifrador(codigo2)
+// console.log(codigoDescifrado2)
+// let codigoContador2 = contadorCaracteres (codigoDescifrado2)
+// console.log(codigoContador1)
+// let codigoClasificador2 = clasificadorDato (codigoDescifrado2)
+// console.log(codigoClasificador1)
+
+
+// let codigo3 = "que%20mal"
+// let codigoDescifrado3 = descifrador(codigo3)
+// console.log(codigoDescifrado3)
+// let codigoContador3 = contadorCaracteres (codigoDescifrado3)
+// console.log(codigoContador3)
+// let codigoClasificador3 = clasificadorDato (codigoDescifrado3)
+// console.log(codigoClasificador3)
+
+
 // 3.
 // solicitar al usuario un mensaje, y cifrarlo con %20 en los espacios. Una vez cifrado decifrarlo
 // con el algoritmo anterior.
+
+// function cifrador(mensaje){
+//     return mensaje.replaceAll(' ', '%20')
+// }
+
+// function descifrador(mensaje){
+//     return mensaje.replaceAll('%20', ' ')
+// }
+
+// let mensajeUsuario = prompt('Ingrese un mensaje')
+// while(mensajeUsuario == '' || mensajeUsuario == null){
+//     mensajeUsuario = prompt('Ingrese un mensaje')
+// }
+
+// let mensajeUsuarioCifrado = cifrador(mensajeUsuario)
+// console.log(mensajeUsuarioCifrado)
+// console.log(descifrador(mensajeUsuarioCifrado))
 
 // 4.
 // Solicitar al usuario una palabra y decir en consola "tiene mayuscula" en el caso de que tenga
@@ -126,23 +195,23 @@
 // alert (puedeVerPelicula (13, true))
 
 
-const personajes = [
-    {
-        nombre: 'pepe',
-        apellido: 'suarez',
-        edad: 40
-    },
-    {
-        nombre: 'maria',
-        apellido: 'cassanova',
-        edad: 20
-    },
-    {
-        nombre: 'ezequiel',
-        apellido: 'rodrigez',
-        edad: 35
-    },
-]
+// const personajes = [
+//     {
+//         nombre: 'pepe',
+//         apellido: 'suarez',
+//         edad: 40
+//     },
+//     {
+//         nombre: 'maria',
+//         apellido: 'cassanova',
+//         edad: 20
+//     },
+//     {
+//         nombre: 'ezequiel',
+//         apellido: 'rodrigez',
+//         edad: 35
+//     },
+// ]
 
 /* 
 Por cada personaje mostrar el siguente mensaje por consola
@@ -153,18 +222,18 @@ Al finalizar el recorrido mostar por consola 'total de edades: {sumatoria de las
 
 
 // FOR
-for(let i=0; i < personajes.length; i ++){
-    const personaje= personajes[i]
-    console.log ("Hola mi nombre es"+ personaje.nombre + personaje.apellido + "y tengo"+personaje.edad+ "años")
-}
+// for(let i=0; i < personajes.length; i ++){
+//     const personaje= personajes[i]
+//     console.log ("Hola mi nombre es"+ personaje.nombre + personaje.apellido + "y tengo"+personaje.edad+ "años")
+// }
 
 // FOR OF
-let sumatoria= 0
-for(const personaje of personajes){
-    console.log ("Hola mi nombre es"+ personaje.nombre + personaje.apellido + "y tengo"+personaje.edad+ "años")
-    sumatoria=sumatoria+personaje.edad
-}
-console.log("el resultado es:"+ sumatoria)
+// let sumatoria= 0
+// for(const personaje of personajes){
+//     console.log ("Hola mi nombre es"+ personaje.nombre + personaje.apellido + "y tengo"+personaje.edad+ "años")
+//     sumatoria=sumatoria+personaje.edad
+// }
+// console.log("el resultado es:"+ sumatoria)
 
 
 // 30)Definí una función esVocal que tome por parámetro un string letra y nos indique si letra es una vocal.
@@ -177,45 +246,45 @@ console.log("el resultado es:"+ sumatoria)
 // true
 
 
-const productos = [
-    {
-        nombre: 'tv samsung',
-        marca: 'samsung',
-        id: 1,
-        precio: 3000
-    },
-    {
-        nombre: 'celular samsung',
-        marca: 'samsung',
-        id: 4,
-        precio: 1100
-    },
-    {
-        nombre: 'tv LG',
-        marca: 'LG',
-        id: 2,  
-        precio: 2900
-    },  
-    {
-        nombre: 'tv noblex',
-        marca: 'noblex',   
-        id: 3,  
-        precio: 2300
-    },
-]
+// const productos = [
+//     {
+//         nombre: 'tv samsung',
+//         marca: 'samsung',
+//         id: 1,
+//         precio: 3000
+//     },
+//     {
+//         nombre: 'celular samsung',
+//         marca: 'samsung',
+//         id: 4,
+//         precio: 1100
+//     },
+//     {
+//         nombre: 'tv LG',
+//         marca: 'LG',
+//         id: 2,  
+//         precio: 2900
+//     },  
+//     {
+//         nombre: 'tv noblex',
+//         marca: 'noblex',   
+//         id: 3,  
+//         precio: 2300
+//     },
+// ]
 
-const filtroPrecio = productos.filter(function(producto){
-    return (producto.precio < 2950)
-}
-)
-const filtroMarca = productos.filter(function(producto){
-    return (producto.marca.toLowerCase() === "noblex".toLowerCase())
-}
-)
-const filtroNombre = productos.filter(function(producto){
-    return (producto.nombre.toLowerCase().includes("tv".toLowerCase))
-}
-)
+// const filtroPrecio = productos.filter(function(producto){
+//     return (producto.precio < 2950)
+// }
+// )
+// const filtroMarca = productos.filter(function(producto){
+//     return (producto.marca.toLowerCase() === "noblex".toLowerCase())
+// }
+// )
+// const filtroNombre = productos.filter(function(producto){
+//     return (producto.nombre.toLowerCase().includes("tv".toLowerCase))
+// }
+// )
 
 /* 
 -Traer los productos que sean de precio inferior a 2950
