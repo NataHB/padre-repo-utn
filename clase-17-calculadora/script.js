@@ -12,7 +12,7 @@ function obtenerDatos(data) {
     }
     return dato
 }
-
+//reproduciondo la function obtenerDatos
 let email = obtenerDatos(
     {
         mensaje:"ingrese el email",
@@ -86,18 +86,48 @@ alert ('el resultado de: ' + numero1 + signo + numero2 + ' es ' + resultado)
 
 //HISTORIAL
 
-const historial = [
-    {
-        accion: 'CALCULAR',
-        operacion: signo,
-        a: numero1,
-        b: numero2,
-        resultado: resultado
+
+//PRACTICAR
+const elementoHistorial = {
+    accion: 'CALCULAR',
+    operacion: signo,
+    a: numero1,
+    b: numero2,
+    resultado: resultado
+}
+
+
+function renderizarHistorial (historialRecibido){
+let listaHistorial = ''
+for (const item of historialRecibido){
+    listaHistorial = listaHistorial + `
+    Accion: ${item.accion}
+    Operacion: ${item.operacion}
+    Numeros: ${item.a}, ${item.b}
+    Resultado: ${item.resultado}
+    `    
+}
+return listaHistorial
+}
+
+//En la funcion de agregar al historial vamos a hacer el push que veniamos haciendo pero ademas vamos a guardar el historial en el localStorage con la key 'historial'
+function agregarHistorial (elementoHistorial) {
+    const historial = obtenerHistorial()
+    historial.push(elementoHistorial)
+    localStorage.setItem('historial', JSON.stringify(historial))
     }
-]
 
-const renderizarHistorial = historial.map (function(historial){
-        return 'accion: ' + historial.accion + '\n' + 'operacion: ' + historial.operacion + '\n' + 'numeros: ' + historial.a + ', ' + historial.b + '\n' + 'resultado: ' + historial.resultado + '\n'}
-)
+//La funcion obtener historial debe tomar el historial del localStorage y retornalo como ARRAY 
+function obtenerHistorial(){
+    const historialString = localStorage.getItem('historial')
+    return JSON.parse(historialString)
+    }
 
-console.log ('El historial es:' + '\n' + renderizarHistorial)
+//verificacion de si hay historial guardado
+    if(obtenerHistorial() === null){
+    localStorage.setItem('historial', JSON.stringify([]))
+    }
+
+agregarHistorial(elementoHistorial)
+
+console.log(renderizarHistorial(obtenerHistorial()))

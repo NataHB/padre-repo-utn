@@ -150,45 +150,6 @@
 
 // caluladora()
 
-const historial = [
-    {
-        accion: 'CALCULAR',
-        operacion: signo,
-        a: numero1,
-        b: numero2,
-        resultado: resultado
-    }
-]
-
-const renderizarHistorial = historial.map (function(historial){
-        return 'accion: ' + historial.accion + '\n' + 'operacion: ' + historial.operacion + '\n' + 'numeros: ' + historial.a + ', ' + historial.b + '\n' + 'resultado: ' + historial.resultado + '\n'}
-)
-
-console.log ('El historial es:' + '\n' + renderizarHistorial)
-
-// const historial = [
-//     {
-//         accion: 'CALCULAR',
-//         operacion: '+',
-//         a: '1',
-//         b: '2',
-//         resultado: '3'
-//     },
-//     {
-//         accion: 'CALCULAR',
-//         operacion: '-',
-//         a: 1,
-//         b: 2,
-//         resultado: -1 
-//     }
-// ]
-
-// const renderizarHistorial = historial.map (function(historial){
-//         return 'accion: ' + historial.accion + '\n' + 'operacion: ' + historial.operacion + '\n' + 'numeros: ' + historial.a + ', ' + historial.b + '\n' + 'resultado: ' + historial.resultado + '\n'}
-// )
-
-// console.log ('El historial es:' + '\n' + renderizarHistorial)
-
 //mi primer forma NO FUNCIONA
 // function validarNumero(numero){
 //    return ( !(!numero || isNaN(numero)))
@@ -286,3 +247,81 @@ console.log ('El historial es:' + '\n' + renderizarHistorial)
 // El historial es
 // -hola
 
+// const historial = [
+//     {
+//         accion: 'CALCULAR',
+//         operacion: signo,
+//         a: numero1,
+//         b: numero2,
+//         resultado: resultado
+//     }
+// ]
+
+// const renderizarHistorial = historial.map (function(historial){
+//         return 'accion: ' + historial.accion + '\n' + 'operacion: ' + historial.operacion + '\n' + 'numeros: ' + historial.a + ', ' + historial.b + '\n' + 'resultado: ' + historial.resultado + '\n'}
+// )
+
+// console.log ('El historial es:' + '\n' + renderizarHistorial)
+
+// Crear una funcion llamada
+// elementoHistorial =  {
+//         accion: 'CALCULAR',
+//         operacion: '-',
+//         a: 1,
+//         b: 2,
+//         resultado: -1
+//     }
+// agregarAlHistorial(elementoHistorial)
+// Agregar el objeto al array global historial
+// obtenerHistorial() que va a retornar el historial global
+
+
+//NUEVA CLASE
+const elementoHistorial = {
+        accion: 'CALCULAR',
+        operacion: signo,
+        a: numero1,
+        b: numero2,
+        resultado: resultado
+    }
+
+
+function renderizarHistorial (historialRecibido){
+    let listaHistorial = ''
+    for (const item of historialRecibido){
+        listaHistorial = listaHistorial + `
+        Accion: ${item.accion}
+        Operacion: ${item.operacion}
+        Numeros: ${item.a}, ${item.b}
+        Resultado: ${item.resultado}
+        `    
+    }
+    return listaHistorial
+}
+
+/* 
+La funcion obtener historial debe tomar el historial del localStorage y retornalo como ARRAY 
+*/
+function obtenerHistorial(){
+    const historialString = localStorage.getItem('historial')
+    return JSON.parse(historialString)
+}
+if(obtenerHistorial() === null){
+    localStorage.setItem('historial', JSON.stringify([]))
+}
+
+/* 
+En la funcion de agregar al historial vamos a hacer el push que veniamos haciendo
+pero ademas vamos a guardar el historial en el localStorage con la key 'historial'
+*/
+function agregarHistorial (elementoHistorial) {
+    const historial = obtenerHistorial()
+    historial.push(elementoHistorial)
+    const historialString = JSON.stringify(historial)
+    localStorage.setItem('historial', historialString)
+}
+
+
+agregarHistorial(elementoHistorial)
+
+console.log(renderizarHistorial(obtenerHistorial()))

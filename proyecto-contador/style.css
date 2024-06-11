@@ -1,0 +1,25 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+    background-color: blueviolet;
+}
+
+#container{
+height: 70vh;
+display: flex;
+justify-content: space-around;
+align-items: center;  
+padding: 100px; 
+}
+
+#horas,
+#minutos,
+#segundos{
+    padding: 70px;
+    background-color: white;
+    color: blueviolet;
+    border-radius: 25px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 40px;
+}
