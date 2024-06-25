@@ -15,27 +15,23 @@ formularioHTML.addEventListener('submit', (evento) =>{
     const username = formulario.username.value
     if(!validarEmail(email)){
         errorEmailHTML.innerText= 'error de email'
-    }
-    else{
+    }else{
         errorEmailHTML.innerText= ''
     }
     if(!validarPassword(password)){
         errorPasswordHTML.innerText= 'error de password'
-    }
-    else{
+    }else{
         errorPasswordHTML.innerText= ''
     }
     if(!validarUsername(username)){
         errorUsernameHTML.innerText= 'error de username'
-    }
-    else{
+    }else{
         errorUsernameHTML.innerText= ''
     }
     if(validarEmail(email)&&validarPassword(password)&&validarUsername(username)){
         console.log('exitoo!!')
     }
-}
-)
+})
 
 // username tiene que tener una mayuscula, y un '-' y almenos 4 caracteres
 // password tiene que tener una mayuscula y un '#'
