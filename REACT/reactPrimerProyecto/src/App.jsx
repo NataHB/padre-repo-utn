@@ -1,4 +1,5 @@
 import React from 'react'
+import Contador from './Contador'
 
 const App = () =>{
     const props ={
@@ -6,10 +7,18 @@ const App = () =>{
       fecha: '1 hour',
       colores: ['#36BA48', '#36BA97', '#36BA86', '#36BA25']
     }
+
+    const [likes, setLikes] = useState(props)
   return (
     <>
-    <ColorCard 
-    propiedades={props}/>
+    <ColorCard propiedades={props}/>
+    <form>
+      <h2>Crea tu carta</h2>
+      <div>
+        <label></label>
+      </div>
+    </form>
+    <Contador limit={10}/>
     </>
   )
 }
