@@ -3,55 +3,31 @@ import { ChatHeaderInfo, ListaMensajes, MensajeForm } from '../Components/Chat'
 import './ChatScreen.css'
 import { useState } from 'react'
 
-export const ChatScreen = () => {
-  const MOOK_MENSAJES = [
-    {
-        author: 'yo',
-        text: 'Hola sos pepe?',
-        estado: 'visto',
-        day: 'hoy',
-        hour: '13:15',
-        id: '1'
-    },
-    {
-        author: 'pepe',
-        text: 'Si soy',
-        estado: 'visto',
-        day: 'hoy',
-        hour: '13:16',
-        id: '2'
-    },
-    {
-        author: 'yo',
-        text: 'Sos real pepe? OMG',
-        estado: 'visto',
-        day: 'hoy',
-        hour: '13:17',
-        id: '3'
-    }
-]
+export const ChatScreen = ({datos}) => {
 
-const [mensajes, setMensajes] = useState(MOOK_MENSAJES);
+  const { nombre, thumbnail, mensajes}= datos
+  
+const [AcumuladorMensajes, setMensajes] = useState(mensajes);
 
   const addMensaje = (mensajeNuevo) => {
-    setMensajes([...mensajes, {
+    setMensajes([...AcumuladorMensajes, {
       author: 'yo',
       text: mensajeNuevo,
-      estado: 'visto',
+      estado: 'no visto',
       day: 'hoy',
       hour: '13:18',
-      id: mensajes.length + 1
+      id: AcumuladorMensajes.length + 1
   }] )
   }
 
   return (
-    <>
-      <ChatHeaderInfo/>
+    <div className='screen'>
+      <ChatHeaderInfo nombre={nombre} thumbnail={thumbnail}/>
     <div className='chat'>
-        <ListaMensajes lista={mensajes}/> 
+        <ListaMensajes lista={AcumuladorMensajes}/> 
     </div>
-      <MensajeForm submitMensaje={addMensaje}/>
+      <MensajeForm addMensaje={addMensaje}/>
     
-    </>
+    </div>
   )
 }

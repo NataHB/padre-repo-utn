@@ -1,19 +1,18 @@
 import React from 'react'
 import './ChatHeaderInfo.css'
-import gato from '../../assets/img/gato.jpeg'
 import camara from '../../assets/img/video-camara.png'
 import telefono from '../../assets/img/telefono.png'
 import puntos from '../../assets/img/puntos.png'
 import angulo from '../../assets/img/angulo.png'
 
-export const ChatHeaderInfo = () => {
+export const ChatHeaderInfo = ({ nombre, thumbnail }) => {
   return (
     <div className="chat-header-info">
       <div className='chat-header'>
         <img src={angulo} alt="angulo"/>
-        <img src={gato} alt="gato soldado"/>
+        <img src={thumbnail} alt="gato soldado"/>
         <div>
-          <h1 className="perfil-nombre">Bigotes</h1>
+          <h1 className="perfil-nombre">{nombre}</h1>
           <p className="estado-texto">En línea</p>
         </div>
       </div>
